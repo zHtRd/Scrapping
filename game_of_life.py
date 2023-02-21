@@ -131,11 +131,11 @@ def updateTable(t):
     for row in range(HEIGHT):
         for column in range(WIDTH):
             neighbor = checkNeighbor(t, row,column)
-            if 2 <= neighbor <= 3: 
+            if neighbor == 3: 
                 newTable[row][column] = 1
-            else:
+            elif 2 < neighbor or neighbor > 3:
                 newTable[row][column] = 0   
-    return newTable 
+    return newTable
 
 # Focntion affichage de tableau
 def showTable(t):
